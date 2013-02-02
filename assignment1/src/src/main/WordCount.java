@@ -43,8 +43,19 @@ public class WordCount extends Configured implements Tool {
       String line = ((Text) value).toString();
       StringTokenizer itr = new StringTokenizer(line);
       while (itr.hasMoreTokens()) {
-        WORD.set(itr.nextToken());
-        context.write(WORD, ONE);
+        String currenttoken = itr.nextToken();
+
+        // Assigment 1:
+        //Let's do a little bit of cleanup of the words.
+        // Modify the word count demo so that only words consisting entirely of letters are counted.
+        // To be more specific, the word must match the following Java regular expression:
+
+        //  word.matches("[A-Za-z]+")
+
+        if (currenttoken.matches("[A-Za-z]+")) {
+          WORD.set(currenttoken);
+          context.write(WORD, ONE);
+        }
       }
     }
   }
