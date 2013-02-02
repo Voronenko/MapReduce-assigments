@@ -1,9 +1,20 @@
 #!/bin/sh
 DIR="$( cd "$( dirname "$0" )" && pwd )"
-echo $DIR
+echo Running in $DIR
+echo Build assigment
+ant -buildfile $DIR/src/build.xml
+echo Removing /user/$USER/wc
+hadoop fs -rmr /user/$USER/wc
+echo Removing local wc
+rm -r $DIR/wc
+mkdir wc
 
-export HADOOP_CLASSPATH="$DIR/lib/activation-1.1.jar:$DIR/lib/ant-1.6.5.jar:$DIR/lib/ant-1.8.1.jar:$DIR/lib/ant-launcher-1.8.1.jar:$DIR/lib/aopalliance-1.0.jar:$DIR/lib/asm-3.2.jar:$DIR/lib/avro-1.3.2.jar:$DIR/lib/avro-1.7.1.cloudera.2.jar:$DIR/lib/bliki-core-3.0.16.jar:$DIR/lib/cglib-2.2.1-v20090111.jar:$DIR/lib/collections-generic-4.01.jar:$DIR/lib/colt-1.2.0.jar:$DIR/lib/commons-beanutils-1.7.0.jar:$DIR/lib/commons-beanutils-core-1.8.0.jar:$DIR/lib/commons-cli-1.2.jar:$DIR/lib/commons-codec-1.4.jar:$DIR/lib/commons-collections-3.2.1.jar:$DIR/lib/commons-compress-1.0.jar:$DIR/lib/commons-configuration-1.6.jar:$DIR/lib/commons-daemon-1.0.3.jar:$DIR/lib/commons-digester-1.8.jar:$DIR/lib/commons-el-1.0.jar:$DIR/lib/commons-httpclient-3.1.jar:$DIR/lib/commons-io-2.1.jar:$DIR/lib/commons-lang-2.6.jar:$DIR/lib/commons-logging-1.1.1.jar:$DIR/lib/commons-math-2.1.jar:$DIR/lib/commons-net-3.1.jar:$DIR/lib/concurrent-1.3.4.jar:$DIR/lib/core-3.1.1.jar:$DIR/lib/dsiutils-1.0.12.jar:$DIR/lib/fastutil-5.1.5.jar:$DIR/lib/geronimo-jms_1.1_spec-1.0.jar:$DIR/lib/gson-2.2.2.jar:$DIR/lib/guava-13.0.1.jar:$DIR/lib/guice-3.0.jar:$DIR/lib/guice-servlet-3.0.jar:$DIR/lib/hadoop-annotations-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-auth-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-common-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-hdfs-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-mapreduce-client-common-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-mapreduce-client-core-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-mapreduce-client-jobclient-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-mapreduce-client-shuffle-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-streaming-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-yarn-api-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-yarn-common-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-yarn-server-common-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-yarn-server-nodemanager-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-yarn-server-resourcemanager-2.0.0-cdh4.1.2.jar:$DIR/lib/hadoop-yarn-server-web-proxy-2.0.0-cdh4.1.2.jar:$DIR/lib/hsqldb-1.8.0.10.jar:$DIR/lib/htmlparser-1.6.jar:$DIR/lib/jackson-core-asl-1.8.8.jar:$DIR/lib/jackson-jaxrs-1.8.8.jar:$DIR/lib/jackson-mapper-asl-1.8.8.jar:$DIR/lib/jackson-xc-1.8.8.jar:$DIR/lib/jasper-compiler-5.5.23.jar:$DIR/lib/jasper-runtime-5.5.23.jar:$DIR/lib/javaee-api-5.0-2.jar:$DIR/lib/javax.inject-1.jar:$DIR/lib/jaxb-api-2.2.2.jar:$DIR/lib/jaxb-impl-2.2.3-1.jar:$DIR/lib/jdiff-1.0.9.jar:$DIR/lib/jersey-core-1.8.jar:$DIR/lib/jersey-guice-1.8.jar:$DIR/lib/jersey-json-1.8.jar:$DIR/lib/jersey-server-1.8.jar:$DIR/lib/jersey-test-framework-grizzly2-1.8.jar:$DIR/lib/jets3t-0.7.1.jar:$DIR/lib/jettison-1.1.jar:$DIR/lib/jetty-6.1.26.jar:$DIR/lib/jetty-util-6.1.26.jar:$DIR/lib/jsch-0.1.42.jar:$DIR/lib/jsp-2.1-6.1.14.jar:$DIR/lib/jsp-api-2.1-6.1.14.jar:$DIR/lib/jsp-api-2.1.jar:$DIR/lib/jsr305-1.3.9.jar:$DIR/lib/jung-algorithms-2.0.1.jar:$DIR/lib/jung-api-2.0.1.jar:$DIR/lib/jung-graph-impl-2.0.1.jar:$DIR/lib/junit-4.8.2.jar:$DIR/lib/jwnl-1.3.3.jar:$DIR/lib/kfs-0.3.jar:$DIR/lib/log4j-1.2.17.jar:$DIR/lib/mail-1.4.3.jar:$DIR/lib/maxent-3.0.0.jar:$DIR/lib/memcached-2.2.jar:$DIR/lib/mockito-all-1.8.5.jar:$DIR/lib/mrunit-0.8.0-incubating.jar:$DIR/lib/netty-3.2.4.Final.jar:$DIR/lib/oro-2.0.8.jar:$DIR/lib/paranamer-2.3.jar:$DIR/lib/paranamer-ant-2.2.jar:$DIR/lib/paranamer-generator-2.2.jar:$DIR/lib/pcj-1.2.jar:$DIR/lib/pig-0.10.0.jar:$DIR/lib/protobuf-java-2.4.0a.jar:$DIR/lib/qdox-1.10.1.jar:$DIR/lib/servlet-api-2.5-20081211.jar:$DIR/lib/servlet-api-2.5-6.1.14.jar:$DIR/lib/servlet-api-2.5.jar:$DIR/lib/slf4j-api-1.6.1.jar:$DIR/lib/slf4j-log4j12-1.6.1.jar:$DIR/lib/snappy-java-1.0.4.1.jar:$DIR/lib/spy-2.4.jar:$DIR/lib/stax-api-1.0.1.jar:$DIR/lib/sux4j-2.0.1.jar:$DIR/lib/tools-1.5.0.jar:$DIR/lib/xmlenc-0.52.jar:$DIR/dist/cloud9-1.4.7.jar:$HADOOP_CLASSPATH"
-#hadoop jar $DIR/dist/cloud9-1.4.7.jar $1 -libjars $DIR/dist/cloud9-1.4.7.jar,$DIR/lib/guava-13.0.1.jar $2 $3 $4 $5 $6 $7 $8 $9 ${10} ${11} ${12} ${13} ${14} ${15} ${16} ${17} ${18} ${19} ${20}
+echo Run task
+
+$DIR/src/etc/hadoop-cluster.sh WordCount -input bible+shakes.nopunc.gz -output wc -numReducers 5
+
+echo copy result to local filesystem
+hadoop fs -get /user/$USER/wc/* $DIR/wc
 
 
-print $HADOOP_CLASSPATH
+
