@@ -42,3 +42,9 @@ DFS initialization:
 Also worth checking this github repo for inspiration:
 
 [https://github.com/alrokayan/hadoop-openstack-centos](https://github.com/alrokayan/hadoop-openstack-centos)
+
+-----------
+
+IntelliJea JAR conf:
+
+![](https://raw.github.com/Voronenko/MapReduce-assigments/master/assignment1/!NOTES/JAR_IntelliJ-IDEA%20IDE.jpg)
