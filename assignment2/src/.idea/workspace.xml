@@ -4,6 +4,7 @@
     <list default="true" id="0911d620-1b5a-401c-8486-28bdacbea9f5" name="Default" comment="" />
     <ignored path="src.iws" />
     <ignored path=".idea/workspace.xml" />
+    <file path="/BigramCount.java" changelist="0911d620-1b5a-401c-8486-28bdacbea9f5" time="1359989360910" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +66,30 @@
       <file leaf-file-name="BigramCount.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/BigramCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="64" selection-start="3998" selection-end="3998" vertical-scroll-proportion="2.6043406">
+            <state line="72" column="42" selection-start="2684" selection-end="2684" vertical-scroll-proportion="0.67445743">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalyzeBigramCount.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/AnalyzeBigramCount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="assignments-stub.iml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments-stub.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="629" column="38" selection-start="23973" selection-end="23973" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,6 +209,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -397,15 +432,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/AnalyzeBigramCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AnalyzeBigramRelativeFrequency.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0">
@@ -464,9 +490,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assignments-stub.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="629" column="38" selection-start="23973" selection-end="23973" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AnalyzeBigramCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/BigramCount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="64" selection-start="3998" selection-end="3998" vertical-scroll-proportion="2.6043406">
+        <state line="72" column="42" selection-start="2684" selection-end="2684" vertical-scroll-proportion="0.67445743">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

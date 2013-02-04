@@ -79,8 +79,13 @@ public class BigramCount extends Configured implements Tool {
 
   private BigramCount() {}
 
-  private static int printUsage() {
-    System.out.println("usage: [input-path] [output-path] [num-reducers]");
+  private static int printUsage(String[] args) {
+    System.out.println("BigramCount usage: [input-path] [output-path] [num-reducers]");
+    System.out.println("You passed:");
+    for (int i = 0; i< args.length; i++) {
+        String param = args[i];
+        System.out.println(param);
+    }
     ToolRunner.printGenericCommandUsage(System.out);
     return -1;
   }
@@ -90,7 +95,7 @@ public class BigramCount extends Configured implements Tool {
    */
   public int run(String[] args) throws Exception {
     if (args.length != 3) {
-      printUsage();
+      printUsage(args);
       return -1;
     }
 

@@ -1,0 +1,17 @@
+input path: bigram
+total number of unique bigrams: 424462
+total number of bigrams: 1578220
+number of bigrams that appear only once: 296139
+
+ten most frequent bigrams: 
+of the	13037
+and the	7034
+the lord	7017
+in the	6738
+to the	3799
+i will	3470
+and he	3020
+shall be	3013
+all the	2714
+i have	2666
+i am	2603
